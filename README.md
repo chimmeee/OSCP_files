@@ -29,7 +29,15 @@ PORT ENUMERATION:
 
 FTP (port 21):
 
+Anonymous log in:
 
+ftp -A $IP #Active mode
+
+ftp $IP
+
+anonymous:anonymous #anonymous login
+
+put test.txt #check if it is reflected in a http port
 
 
 
