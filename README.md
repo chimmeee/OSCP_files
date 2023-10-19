@@ -84,6 +84,12 @@ Cracking private passphrase - NOTE: the key could be in id_rsa format (enumerate
 
 ```john --wordlist=/usr/share/wordlists/rockyou.txt id_ecdsa.hash```
 
+Finding Private keys
+
+```cat /etc/ssh/*pub``` #Use this to view the type of key you have aka (ecdsa) / in file ra để tìm định dạng của ssh key
+
+```ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBK6SiUV5zqxqNJ9a/p9l+VpxxqiXnYri40OjXMExS/tP0EbTAEpojn4uXKOgR3oEaMmQVmI9QLPTehCFLNJ3iJo= root@web01``` #example
+
 
 
 
