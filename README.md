@@ -3,6 +3,7 @@ OSCP NOTE/Cheat Sheet/SCRIPTS
 OSCP Note from my PEN200 labs and OSCP A-B-C practice test / OSCP note từ khóa học PEN200 và bài kiểm tra thử OSCP A-B-C
 
 ENUMERATION METHOD:
+
 Personal opinion: autorecon+nmap rarely missed an initial access in OSCP lab and exam, and if it missed, likely it is a hidden API endpoint and hidden directories. /  autorecon kết hợp với nmap hiếm khi bỏ sót việc truy cập ban đầu trong môi trường OSCP lab và bài thi, và nếu nó bỏ sót, có khả năng đó là các API endpoint ẩn và các thư mục ẩn.
 
 Network Initial Scan: 
