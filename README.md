@@ -104,7 +104,7 @@ log in telnet:
 
 ```telnet -l user $IP```
 
-
+SMTP, POP3, Telnet (port 25, port 110, port 23 )
 
 
 
