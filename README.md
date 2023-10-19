@@ -94,29 +94,15 @@ Finding Private keys/PUblick key / tìm thấy ssh keys
 
 ```/home/anita/.ssh/id_ecdsa``` #private key / tìm thấy private key
 
-RCE with scp (rare) 
+TELNET (port 23)
 
-```kali@kali:~/home/max$ cat scp_wrapper.sh```
+enumerate telnet:
 
-```#!/bin/bash```
+```nmap -n -sV -Pn --script "*telnet*" -p 23 {IP}```
 
-```case $SSH_ORIGINAL_COMMAND in```
+log in telnet:
 
- ```'scp'*)```
- 
-    ```$SSH_ORIGINAL_COMMAND```
-    
-    ```;;```
-    
- ```*)```
- 
-    ```echo "ACCESS DENIED."```
-    
-    ```scp```
-    
-    ```;;```
-    
-```esac```
+```telnet -l user $IP```
 
 
 
