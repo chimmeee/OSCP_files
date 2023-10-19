@@ -94,6 +94,19 @@ Finding Private keys/PUblick key / tìm thấy ssh keys
 
 ```/home/anita/.ssh/id_ecdsa``` #private key / tìm thấy private key
 
+RCE with scp (rare) 
+
+```kali@kali:~/home/max$ cat scp_wrapper.sh```
+```#!/bin/bash```
+```case $SSH_ORIGINAL_COMMAND in```
+ ```'scp'*)```
+    ```$SSH_ORIGINAL_COMMAND```
+    ```;;```
+ ```*)```
+    ```echo "ACCESS DENIED."```
+    ```scp```
+    ```;;```
+```esac```
 
 
 
