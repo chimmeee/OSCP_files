@@ -25,6 +25,12 @@ AUTORECON:
 
 ```sudo autorecon $IP```
 
+PORT ENUMERATION:
+
+FTP (port 21):
+
+
+
 
 
 
