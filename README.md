@@ -37,6 +37,31 @@ FTP (port 21):
 
 ```put test.txt``` #check if it is reflected in a http port
 
+```put winpeas.exe``` # test binary upload
+
+```hydra -l usernames.txt -P /usr/share/wordlists/rockyou.txt $IP -t 4 ftp``` #brute force FTP
+
+```wget -r ftp://anonymous:anonymous@1IP/``` #download file recursively (anonymous logged) / tải tất cả các files trong folder share
+
+```wget -r ftp://username:password@IP/``` 
+
+```find / -name Settings.*  2>/dev/null``` #looking through the files / tìm tên file
+
+EXTRA
+
+Looking for hidden information in files in share folder /  trích xuất thông tin có trong files document:
+
+EXIFTOOL:
+
+```exiftool *``` #extract information in all files / tìm kiếm thông tin trong tất cả các file có trong folder
+
+```exiftool -a -u filename.pdf```
+
+
+
+
+
+
 
 
 
