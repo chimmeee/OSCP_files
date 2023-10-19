@@ -47,7 +47,7 @@ FTP (port 21):
 
 ```find / -name Settings.*  2>/dev/null``` #looking through the files / tìm tên file
 
-EXTRA
+extra:
 
 Looking for hidden information in files in share folder /  trích xuất thông tin có trong files document:
 
@@ -56,6 +56,33 @@ EXIFTOOL:
 ```exiftool *``` #extract information in all files / tìm kiếm thông tin trong tất cả các file có trong folder
 
 ```exiftool -a -u filename.pdf```
+
+SSH (port 22):
+
+Private key obtained
+
+```chmod 600 id_rsa```
+
+```ssh user@IP -i id_rsa```
+
+Public key obtained
+
+```cat id_rsa.pub``` 
+
+```ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC8J1/BFjH/Oet/zx+bKUUop1IuGd93QKio7Dt7Xl/J91c2EvGkYDKL5xGbfQRxsT9IePkVINONXQHmzARaNS5lE+SoAfFAnCPnRJ+KrnJdPxYf4OQEiAxHwRJHvbYaxEEuye7GKP6V0MdSvDtqKsFk0YRFVdPKuforL/8SYtSfqYUywUJ/ceiZL/2ffGGBJ/trQJ2bBL4QcOg05ZxrEoiTJ09+Sw3fKrnhNa5/NzYSib+0llLtlGbagBh3F9n10yqqLlpgTjDp5PKenncFiKl1llJlQGcGhLXxeoTI59brTjssp8J+z6A48h699CexyGe02GZfKLLLE+wKn/4luY0Ve8tnGllEdNFfGFVm7WyTmAO2vtXMmUbPaavDWE9cJ/WFXovDKtNCJxpyYVPy2f7aHYR37arLL6aEemZdqzDwl67Pu5y793FLd41qWHG6a4XD05RHAD0ivsJDkypI8gMtr3TOmxYVbPmq9ecPFmSXxVEK8oO3qu2pxa/e4izXBFc= john@oscp``` #new user found
+
+Brute force:
+
+```hydra -L users.txt -p passwords.txt $IP -t 4 ssh``` 
+
+Cracking private passphrase - NOTE: the key could be in id_rsa format (enumerate the nmap ssh scan to determine the key format)
+/etc/ssh/*pub #Use this to view the type of key you have aka (ecdsa) / khóa ssh có thể ở dạng id_rsa hoặc id_ecdsa, chúng ta dựa vào nmap scan để định dạng
+
+```ssh2john id_ecdsa > id_ecdsa.hash``` #this instance the private key is ecdsa format 
+
+```cat id_ecdsa.hash``` 
+
+```john --wordlist=/usr/share/wordlists/rockyou.txt id_ecdsa.hash```
 
 
 
