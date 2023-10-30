@@ -2,6 +2,8 @@ OSCP NOTE/Cheat Sheet/SCRIPTS
 
 OSCP Note from my PEN200 labs and OSCP A-B-C practice test / OSCP note từ khóa học PEN200 và bài kiểm tra thử OSCP A-B-C
 
+Sử dụng note và cheatsheet tốt nhất là tự viết.
+
 ENUMERATION METHOD:
 
 Personal opinion: autorecon+nmap rarely missed an initial access in OSCP lab and exam, and if it missed, likely it is a hidden API endpoint and hidden directories /  autorecon kết hợp với nmap hiếm khi bỏ sót việc truy cập ban đầu trong môi trường OSCP lab và bài thi, và nếu nó bỏ sót, có khả năng đó là các API endpoint ẩn và các thư mục ẩn.
@@ -105,6 +107,13 @@ log in telnet:
 ```telnet -l user $IP```
 
 SMTP, POP3, Telnet (port 25, port 110, port 23 )
+
+Enum and login
+
+```nmap --script "pop3-capabilities or pop3-ntlm-info" -sV -p 110 $IP```
+
+```telnet $IP 110 #Connect to pop3```
+
 
 
 
