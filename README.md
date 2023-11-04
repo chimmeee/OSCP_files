@@ -132,6 +132,8 @@ wait for nc -lnvp 4444
 
 WEB SERVER (port 80, 8000, 8080, etc)
 
+BurbSuite Academy or Tryhackme Web application attack are sufficient to learn all the technique in OSCP web attacks, infact BurpSuite Academy is over-killed for OSCP but worth learning in the long-term red team career.
+
 Brute Force access:
 
 ```ffuf -c -w /usr/share/wordlists/dirb/small.txt -u https://ffuf.io.fi/FUZZ```
@@ -167,8 +169,15 @@ Once we gather information about the running application or service, we can rese
 
 Check when the target is running an IIS web server is C:\inetpub\wwwroot\web.config, which may contain sensitive information like passwords or usernames.
 
+Local file Inclusions
+
+File upload vulnerability
 
 OS Command Injection:
+
+SQL Injection
+
+
 
 
 
